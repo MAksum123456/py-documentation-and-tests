@@ -137,18 +137,18 @@ class MovieViewSet(
             ),
             OpenApiParameter(
                 "genres",
-                type={"type": "array", "items": {"type": "str"}},
+                type={"type": "str", "items": {"type": "number"}},
                 description="Filter by genres id (ex. ?genres=2,3)",
             ),
             OpenApiParameter(
                 "actors",
-                type={"type": "array", "items": {"type": "str"}},
+                type={"type": "str", "items": {"type": "number"}},
                 description="Filter by actors id (ex. ?actors=2)",
             )
         ]
     )
     def list(self, request, *args, **kwargs):
-        """Get list of buses."""
+        """Get list of movies."""
         return super().list(request, *args, **kwargs)
 
 
@@ -206,7 +206,7 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
         ]
     )
     def list(self, request, *args, **kwargs):
-        """Get list of buses."""
+        """Get list of movie_sessions."""
         return super().list(request, *args, **kwargs)
 
 
